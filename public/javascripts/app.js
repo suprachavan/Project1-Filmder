@@ -33,7 +33,7 @@ var AddMovieToHtml= function(movieObject){
    $('#movieCard').append(
     '<div class="ui three column middle aligned very relaxed stackable grid">' +
     
-    '<div class="middle aligned center column">' +
+    '<div class="middle aligned center black column">' +
     '<div id="VoteResult2"><div class="ui buttons">' + 
           '<div id="VoteUp" class="ui huge huge aligned fluid positive button">'+
           '<i class="large thumbs up icon"></i>Watch It</div>'+
@@ -44,7 +44,7 @@ var AddMovieToHtml= function(movieObject){
     '<img class="ui middle aligned center medium rounded image" src=' + movieObject.mPosterUrl + '>' +
     '</div><div class="ui vertical divider"></div>' +
     
-    '<div class="middle aligned center column">' +
+    '<div class="middle aligned center black column">' +
     '<div id="VoteResult">' +
     '<div class="ui buttons">' + 
           '<div id="VoteDown" class="ui huge aligned fluid negative button" >'+
@@ -164,6 +164,7 @@ $(function(){
 
 	callShowAllMoviesFunction();
 
+
 	$('.watch').click(function(){
 		console.log('watch button clicked');
 	});
@@ -247,6 +248,7 @@ $(function(){
 	    callLogInFunction();
 	    event.preventDefault();
 	    console.log('form valid');
+      $('.result3').empty();
 		}
 
 	});
@@ -316,9 +318,11 @@ $(function(){
 	    callSignUpFunction();
 	    event.preventDefault();
 	    console.log('form valid');
+      
 	  	}
   });
 	$('.addmovie_form').form({
+    // $('.result3').html();
 		fields: {
 					moviename: {
 		      		identifier : 'moviename',
@@ -334,6 +338,7 @@ $(function(){
 	    callAddMoviesFunction();
 	    event.preventDefault();
 	    console.log('form valid');
+     
 		}
 	});
 
