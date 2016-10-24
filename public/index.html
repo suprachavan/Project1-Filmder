@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Filmder</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+    <script src="javascripts/app.js"></script>
+</head>
+
+<body color="black">
+    <nav class="ui fixed inverted menu">
+        <div class="left menu">
+            <div class="header siteheader item">
+            	<a class ="redirect" href="#">
+                	<img alt="this is logo image" class="ui tiny image" src="images/logo_black_2.png"> 
+                </a> 
+            </div>
+            <div class="item">
+                <div class="about_us" data-tooltip="
+                    If you want to get voted on 
+                    which movies are worth your time 
+                    and which ones can be skipped 
+                    for good, this site is for you!" data-position="bottom left" data-variation="wide">
+					  About Us
+				</div>
+            </div>
+            <div class="item">
+                <div class="about_us" data-tooltip="For any support or queries, contact us at support@filmder.com" data-position="bottom left" data-variation="wide">
+					  Support
+				</div>
+            </div>
+        </div> <!-- end left menu -->
+        <div class="ui container">
+            <div class="right right_menu1 menu">
+                <div class="item">
+	                <div class="ui buttons">
+	                    <div class="ui signup blue button">
+		                    <div class="ui left icon a">
+		                        <i class="add user icon"></i>Sign Up               
+		                    </div>
+	                    </div>
+	                    <div class="or"></div>
+	                    <div class="ui login green button">
+		                    <div class="ui left icon a">
+		                        <i class="sign in icon"></i>Log In
+		                    </div>
+	                    </div>
+	                </div>
+                </div>
+            </div>
+            <div class="left right_menu3 menu">
+            	<div class="item">
+            		<div class="ui black profile button">
+            			My Profile
+            		</div>
+            	</div>
+            </div>
+            <div class="right right_menu2 menu">
+                <div class="item">
+                    <div class="ui left labeled button" tabindex="0">
+                    	<a class="ui basic right pointing label"></a>
+                      	<div class="ui red logout button">
+                        	<i class="log out icon"></i>Log Out
+                      	</div>
+                      	<span class="userId"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- oatd code -->
+    <div class="main" id="movieCard2">
+        <div class="ui middle aligned center aligned grid">
+            <div class="column">
+                <div class="ui black inverted segment">                 
+                    <h3 class="ui middle aligned center aligned top_header"></h3>
+                    
+                    <img alt="this is logo image" class="ui middle center aligned large image" src="images/logo_black_2.png">
+
+                </div>
+                <div class="ui login_seg inverted black segment">
+                    <h3 class="ui header">To add movies/TV shows to your profile, click here</h3>
+                    <div class ="ui grey inverted addmovie_button button">Add Movies/TV Shows</div>
+                
+                    <h3 class="ui header">To view your watch list, click here</h3>
+                    <div class ="ui grey inverted showmovie_button button">View my list</div>
+                    <div class="ui movie_seg inverted black segment"></div>
+                    
+                </div>
+                <div class="ui main_seg inverted black segment">
+                   	
+                    <!-- <h2 class="ui header">Let's get started!</h2> -->
+                    <div class="main_window">
+                      <div id="ShowTitle">
+                      </div>
+                    	<div id="movieCard">
+                        <!-- <p>TEST</p> -->
+                    	</div>
+                    </div> <!--end of class main_window-->
+                </div>  <!-- end main_seg -->
+	                <div class="ui signup_modal small modal">
+	                    <div class="ui segment">
+	                    <h2 class="ui header">First things first, let's sign up!</h2>
+	                    <div class="info message"></div>
+	                    	<form class="ui large signup_form form">
+	                        <!-- <div class="ui gray tertiary form_seg segment"> -->
+                        	<div class="field">
+                                <div class="ui left icon input">
+	                                <i class="user icon"></i>
+	                                <input type="text" name="uname" placeholder="Enter User Name ">
+                                </div>
+	                        </div>
+	                        <div class="field">
+	                        	<div class="ui left icon input">
+	                        		<i class="mail icon"></i>
+	                                <input type="text" name="email" placeholder="Enter Email Address ">
+	                            </div>
+	                        </div>
+	                        <div class="field">
+	                        	<div class="ui left icon input">
+	                        		<i class="privacy icon"></i>
+	                                <input type="password" name="pwd1" placeholder="Enter Password ">
+	                            </div>
+	                        </div>
+	                        <div class="field">
+	                        	<div class="ui left icon input">
+	                        		<i class="privacy icon"></i>
+	                                <input type="password" name="pwd2" placeholder="Confirm Password ">
+	                            </div>
+	                        </div>
+	                        <div class="field">
+	                            <div class="ui checkbox">
+	                                <input type="checkbox" name="chck">
+	                                <label>I agree to the 
+	                                    <a href="#">Terms</a> and 
+	                                    <a href="#">Conditions</a>
+	                                </label>
+	                            </div>
+	                        </div>
+	                        <div class="field">
+	                            <div class="ui blue submit button">
+	                                <i class="add user icon"></i>Sign Up
+	                            </div>
+	                        </div>   
+	                        <div class="field"> Already have an account?
+	                            <a class="login">Log In</a> 
+	                        </div>    
+	                        <div class="ui error message"></div>  
+	                        <!-- </div> -->
+	                        <div class="result"></div>
+	                    </form>
+                	</div> 
+
+                </div>  <!--end signup modal -->
+                  <div class="ui login_modal small modal">
+                    <div class="ui gray tertiary form_seg segment">
+                    <h2 class="ui header">log in to your account</h2>
+                    <div class="info message"></div>
+                    <form class="ui large login_form form">
+                        <div class="field">
+                                <div class="ui left icon input">
+	                                <i class="user icon"></i>
+	                                <input type="text" name="ulname" placeholder="Enter User Name ">
+                                </div>
+                        </div>
+                        <div class="field">
+                        	<div class="ui left icon input">
+                        		<i class="privacy icon"></i>
+                                <input type="password" name="pwd" placeholder="Enter Password ">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui blue submit button">
+                                <i class="sign in icon"></i>Log in
+                            </div>
+                        </div>   
+                        <div class="field"> Don't have an account?
+                            <a class="signup">Sign up</a> 
+                        </div>    
+                        <div class="ui error message"></div> 
+                        <div class="result2"></div> 
+                    </form> 
+                </div>
+                </div> <!--end login modal-->
+                  <div class="ui small addmovie_modal modal">
+                    <div class="ui gray tertiary form_seg segment">
+                        <div class="info message"></div>
+                        <form class="ui addmovie_form form">
+                            <div class="field">
+                                <div class="ui left icon input">
+                                    <i class="film icon"></i>
+                                    <input type="text" name="moviename" placeholder="Enter Name of the movie or TV show">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="ui blue submit button">
+                                    <i class="add square icon"></i>Add
+                                </div>
+                            </div>       
+                            <div class="ui error message"></div> 
+                            <div class="result3"></div> 
+                        </form>
+                    </div>
+                </div> <!-- end add movie modal -->
+                <!-- <div class="ui gray inverted vertical footer segment">  -->
+                	<!-- <div class="ui fixed inverted footer menu">
+                            	<i class="copyright icon"></i>
+                                Oscillatory Memorization
+                    </div> -->
+                <!-- </div> -->
+            <!--- out  -->
+            </div> <!-- end column -->
+        </div>   <!-- end grid -->
+    </div> <!-- end main -->
+</body>
+
+</html>

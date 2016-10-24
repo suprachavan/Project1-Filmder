@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<head>
+    <title>Rate My Choice</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+	<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+    <script src="javascripts/app.js"></script>
+</head>
+
+<body>
+    <nav class="ui fixed menu">
+        <div class="right menu">
+            <div class="header siteheader item">
+                    <a href= "home.html">Rate My Choice</a>
+            </div>
+            <!-- </div> -->
+        </div>
+        <div class="ui container">
+            <div class="active item">
+                <div class="ui left icon a">
+                    <i class="add user icon"></i>
+                    <a href= "signup.html">Sign Up</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ui left icon a">
+                    <i class="comments icon"></i>
+                    <a href= "faq.html">FAQ</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ui left icon a">
+                    <i class="settings icon"></i>
+                    <a href= "#">Support</a>
+                </div>
+            </div>
+            <div class="right menu">
+                <div class="item">
+                    <div class="ui icon input">
+                        <input type="text" placeholder="Search">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="main">
+        <div class="ui middle aligned center aligned grid">
+            <div class="column">
+                <div class="ui gray inverted fixed header segment">                 
+                    <h1 class="ui middle aligned center aligned top_header">Rate My Choice</h1>
+                </div>
+                <div class="ui gray tertiary form_seg segment">
+                    <h2 class="ui header">First things first, let's sign up!</h2>
+                    <div class="info message"></div>
+                    <form class="ui large main_form form" action="POST">
+                        <!-- <div class="ui gray tertiary form_seg segment"> -->
+                        <div class="field">
+                                <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="uname" placeholder="Enter User Name ">
+                                </div>
+                        </div>
+                        <div class="field">
+                                <input type="text" name="email" placeholder="Enter Email Address ">
+                        </div>
+                        <div class="field">
+                                <input type="password" name="pwd1" placeholder="Enter Password ">
+                        </div>
+                        <div class="field">
+                                <input type="password" name="pwd2" placeholder="Confirm Password ">
+                        </div>
+                        <div class="field">
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="chck">
+                                <label>I agree to the 
+                                    <a href="#">Terms</a> and 
+                                    <a href="#">Conditions</a>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui blue submit button">
+                                <i class="add user icon"></i>Sign Up
+                            </div>
+                        </div>   
+                        <div class="field"> Already have an account?
+                            <a href="#">Log In</a> 
+                        </div>    
+                        <div class="ui error message"></div>  
+                        <!-- </div> -->
+                        <div class="result"></div>
+                    </form>
+                    
+                </div>
+                <div class="ui gray inverted vertical footer segment">
+                    <div class="ui container">
+                        <div class="ui inverted stackable grid">
+                            <div class="left aligned eight wide column">
+                                <h4 class="ui inverted header">Contact Us</h4>
+                                <p>Rate My Choice</p>
+                                <p>555 Fiftieth Street</p>
+                                <p>Fullerton, CA 92831</p>
+                            </div>
+                            <div class="right aligned eight wide column">
+                                <h4 class="ui inverted header">Site Map</h4>
+                                <div class="ui inverted link list">
+                                    <a href="index.html" class="item">Home</a>
+                                    <a href="#" class="item">About us</a>
+                                    <a href="#" class="item">Privacy</a>
+                                    <a href="#" class="item">Support</a>
+                                    <a href="faq.html" class="item">FAQ</a>
+                                    <a href="#" class="item">Careers</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+</body>
+
+</html>
