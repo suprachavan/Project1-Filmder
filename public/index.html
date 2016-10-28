@@ -11,12 +11,12 @@
     <script src="javascripts/app.js"></script>
 </head>
 
-<body color="black">
+<body>
     <nav class="ui fixed inverted menu">
         <div class="left menu">
             <div class="header siteheader item">
             	<a class ="redirect" href="#">
-                	<img alt="this is logo image" class="ui tiny image" src="images/logo_black_2.png"> 
+                	<img alt="this is logo image" class="ui tiny image" src="images/logo_filmder_semantic_black.png"> 
                 </a> 
             </div>
             <div class="item">
@@ -76,15 +76,18 @@
     <div class="main" id="movieCard2">
         <div class="ui middle aligned center aligned grid">
             <div class="column">
-                <div class="ui black inverted segment">                 
+                <div class="ui black fixed inverted segment">                 
                     <h3 class="ui middle aligned center aligned top_header"></h3>
                     
-                    <img alt="this is logo image" class="ui middle center aligned large image" src="images/logo_black_2.png">
+                    <img alt="this is logo image" class="ui middle center aligned large image" src="images/logo_filmder_semantic_black.png">
 
                 </div>
                 <div class="ui login_seg inverted black segment">
-                    <h3 class="ui header">To add movies/TV shows to your profile, click here</h3>
+                    <h3 class="ui header">To add movies/TV shows to your watch list, click here</h3>
                     <div class ="ui grey inverted addmovie_button button">Add Movies/TV Shows</div>
+
+                    <h3 class="ui header">To delete movie/TV show from your watch list, click here</h3>
+                    <div class ="ui grey inverted deletemovie_button button">Delete from list</div>
                 
                     <h3 class="ui header">To view your watch list, click here</h3>
                     <div class ="ui grey inverted showmovie_button button">View my list</div>
@@ -135,9 +138,7 @@
 	                        <div class="field">
 	                            <div class="ui checkbox">
 	                                <input type="checkbox" name="chck">
-	                                <label>I agree to the 
-	                                    <a href="#">Terms</a> and 
-	                                    <a href="#">Conditions</a>
+	                                <label>I agree to the terms and conditions.
 	                                </label>
 	                            </div>
 	                        </div>
@@ -186,6 +187,27 @@
                     </form> 
                 </div>
                 </div> <!--end login modal-->
+                <div class="ui deletemovie_modal small modal">
+                	<div class="ui gray tertiary form_seg segment">
+                        <div class="info message"></div>
+                        <form class="ui deletemovie_form form">
+                            <div class="field">
+                                <div class="ui left icon input">
+                                    <i class="film icon"></i>
+                                    <input type="text" name="dmoviename" placeholder="Enter Name of the movie or TV show you want to delete">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="ui blue submit button">
+                                    <i class="trash square icon"></i>Delete
+                                </div>
+                            </div>       
+                            <div class="ui error message"></div> 
+                            <div class="result4"></div> 
+                        </form>
+                    </div>
+                </div>
+
                   <div class="ui small addmovie_modal modal">
                     <div class="ui gray tertiary form_seg segment">
                         <div class="info message"></div>
@@ -206,16 +228,14 @@
                         </form>
                     </div>
                 </div> <!-- end add movie modal -->
-                <!-- <div class="ui gray inverted vertical footer segment">  -->
-                	<!-- <div class="ui fixed inverted footer menu">
-                            	<i class="copyright icon"></i>
-                                Oscillatory Memorization
-                    </div> -->
-                <!-- </div> -->
-            <!--- out  -->
             </div> <!-- end column -->
         </div>   <!-- end grid -->
     </div> <!-- end main -->
+    
+    <footer>
+    <div class="ui black fixed bottom inverted segment"><i class="copyright icon"></i>
+                                Oscillatory Memorization - Group 1 - CPSC 473</div>
+    </footer>
 </body>
 
 </html>
