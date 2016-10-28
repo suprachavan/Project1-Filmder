@@ -1,3 +1,5 @@
+//server side javascript
+
 // {
 //     "node": true,
 //     "camelcase": true,
