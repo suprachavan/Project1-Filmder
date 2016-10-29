@@ -6,6 +6,7 @@
   Email- supra.chavan@gmail.com
  */
 
+var nexting, voting, voteButton;
 /**
  * Sign up functionality for first time user
  * Submits sign up form data to server as JSON
@@ -146,92 +147,13 @@ var callDeleteMoviesFunction = function(){
 }; //end function
 
 /**
- * Functionality to handle "watch it" or "skip it" button clicks
- * Input- name of the movie
- * passed as an argument nameMovie
- * Output- calls function Voting() with argument nameMovie 
- */
-var VoteButton = function(nameMovie){
-  'use strict';
-  $('#VoteUp').click(function () {
-    $('#VoteResult').empty();
-    $('#VoteResult2').empty();
-    Voting(nameMovie,1); 
-  });
-  
-  $('#VoteDown').click(function () {
-    $('#VoteResult').empty();
-    $('#VoteResult2').empty();
-    Voting(nameMovie,-1);  
-  });
-
-  $('.nextButton').click(function(){
-    callShow1MovieFunction();
-  });
-  
-  $('#NeverSeen').click(function(){
-    callShow1MovieFunction();
-  });
-
-};
-
-/**
- * Functionality add "next movie" button to index.html
- * Input- -
- * Output- calls function Voting()
- */
-var Nexting = function(){
-  'use strict';
-  $('#VoteResult').append(
-    '<br><div class="nextButton ui buttom aligned fluid inverted button">'+
-    'NEXT MOVIE</div>');
-  $('#VoteResult2').append(
-    '<br><div class="nextButton ui buttom aligned fluid inverted button">'+
-    'NEXT MOVIE</div>');
-  VoteButton();
-};
-
-/**
- * Functionality to post upvote or downvote score on
- * "watch it" or "skip it" button clicks
- * Input- name of the movie, score
- * Output- updated upvote or downvote score
- */
-var Voting = function(nameMovie,score){
-  'use strict';
-  var result; 
-  var jsonStr = JSON.stringify({'movieName': nameMovie, 'score': score});
-  $.ajax({  
-          type: 'POST',
-          data: jsonStr,
-          dataType: 'json',
-          contentType: 'application/json',
-          url: 'http://localhost:3000/scoreUpdate',            
-          success: function(data) {
-          result = data;
-          console.log(result);
-          $('#VoteResult2').append(
-            '<div><h3>Result</h3><i class="huge thumbs green up icon">' +
-            '</i><h3>' + result.upVote + '</h3><br><br>');
-          $('#VoteResult').append(
-            '<div><h3>Result</h3><i class="huge thumbs red down icon">' +
-            '</i><h3>' + result.downVote + '</h3><br><br>');
-          Nexting();
-      }, //end success
-      error: function(){
-        console.log('Cannot Vote');
-      } //end error
-  }); //end ajax
-}; //end function Voting()
-
-/**
  * Functionality to add movies and display on index.html
  * Input- data returned on success of ajax call in CallShow1MovieFunction
  * passed as an argument movieObject
  * Output- movie content (e.g. title, poster, etc added to html page)
  * calls function VoteButton() with obtained movie name as an argument
  */
-var AddMovieToHtml= function(movieObject){
+var addMovieToHtml= function(movieObject){
   'use strict';
 
   $('#movieCard').empty();  //Semantic UI card to show movie content
@@ -264,7 +186,7 @@ var AddMovieToHtml= function(movieObject){
   $('#ShowTitle').append(
     '<div class="middle aligned center large black "><h1>'+ 
     movieObject.mTitle + '</h1>('+ movieObject.mYear +')</div><br>');
-  VoteButton(movieObject.movieName);
+  voteButton(movieObject.movieName);
 }; //end function
 
 /**
@@ -285,10 +207,89 @@ var callShow1MovieFunction =function () {
                           console.log('success');
                           console.log(JSON.stringify(data));
                           console.log(data);
-                          AddMovieToHtml(data);
+                          addMovieToHtml(data);
           } //end success
   }); //end ajax
 }; //end function
+
+/**
+ * Functionality to handle "watch it" or "skip it" button clicks
+ * Input- name of the movie
+ * passed as an argument nameMovie
+ * Output- calls function Voting() with argument nameMovie 
+ */
+voteButton = function(nameMovie){
+  'use strict';
+  $('#VoteUp').click(function () {
+    $('#VoteResult').empty();
+    $('#VoteResult2').empty();
+    voting(nameMovie,1); 
+  });
+  
+  $('#VoteDown').click(function () {
+    $('#VoteResult').empty();
+    $('#VoteResult2').empty();
+    voting(nameMovie,-1);  
+  });
+
+  $('.nextButton').click(function(){
+    callShow1MovieFunction();
+  });
+  
+  $('#NeverSeen').click(function(){
+    callShow1MovieFunction();
+  });
+
+};
+
+/**
+ * Functionality add "next movie" button to index.html
+ * Input- -
+ * Output- calls function Voting()
+ */
+nexting = function(){
+  'use strict';
+  $('#VoteResult').append(
+    '<br><div class="nextButton ui buttom aligned fluid inverted button">'+
+    'NEXT MOVIE</div>');
+  $('#VoteResult2').append(
+    '<br><div class="nextButton ui buttom aligned fluid inverted button">'+
+    'NEXT MOVIE</div>');
+  voteButton();
+};
+
+/**
+ * Functionality to post upvote or downvote score on
+ * "watch it" or "skip it" button clicks
+ * Input- name of the movie, score
+ * Output- updated upvote or downvote score
+ */
+voting = function(nameMovie,score){
+  'use strict';
+  var result; 
+  var jsonStr = JSON.stringify({'movieName': nameMovie, 'score': score});
+  $.ajax({  
+          type: 'POST',
+          data: jsonStr,
+          dataType: 'json',
+          contentType: 'application/json',
+          url: 'http://localhost:3000/scoreUpdate',            
+          success: function(data) {
+          result = data;
+          console.log(result);
+          $('#VoteResult2').append(
+            '<div><h3>Result</h3><i class="huge thumbs green up icon">' +
+            '</i><h3>' + result.upVote + '</h3><br><br>');
+          $('#VoteResult').append(
+            '<div><h3>Result</h3><i class="huge thumbs red down icon">' +
+            '</i><h3>' + result.downVote + '</h3><br><br>');
+          nexting();
+      }, //end success
+      error: function(){
+        console.log('Cannot Vote');
+      } //end error
+  }); //end ajax
+}; //end function Voting()
 
 var flag =false;  //Flag to check whether user is logged in or not
 
@@ -599,7 +600,3 @@ var main = function(){
 }; //end function main
 
 $(document).ready(main);
-
-
-
-
