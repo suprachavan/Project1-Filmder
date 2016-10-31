@@ -1,6 +1,6 @@
 #Filmder (Should I watch this?  Strangers vote on your TV and movie choices)
 
-Project 1 submission by team- Oscillatory Memorization
+Project 1 submission by Team- Oscillatory Memorization
 
 Group Members: Supra Chavan, Edwin Diaz-Mendez, Itsaraphongm Sawangsri, Joseph Woolf, Andrew Do
 
@@ -17,7 +17,7 @@ The application interacts with a free Web API- OMDb i.e. Open Movie Database (ht
 1. Clone the project directory from the github repository- https://github.com/suprachavan/Project1-Filmder
 2. Navigate to the home project directory and run `npm install`
 3. Start up the MongoDB and server using command `foreman start`
-4. Step 3 will give an error if MongoDB is already running. Please make sure that the process for MongoDB is already stopped before running the command in Step 3. You may directly start up the server with `node p1server.js` command.
+4. Step 3 will give an error if MongoDB is already running. Please make sure that the process for MongoDB is already stopped before running the command in Step 3. In case of this error in Step 3, You may directly start up the server with `node p1server.js` command.
 4. The server will be listening on localhost:3000
 5. Navigate to localhost:3000 through your favorite browser
 
