@@ -4,7 +4,7 @@ Project 1 : Should I watch this?  Strangers vote on your TV and movie choices
 
 Submission by Team- Oscillatory Memorization
 
-Group Members: Supra Chavan, Edwin Diaz-Mendez, Itsaraphongm Sawangsri, Joseph Woolf, Andrew Do
+Group Members: Supra Chavan, Edwin Diaz-Mendez, Itsaraphong Sawangsri, Joseph Woolf, Andrew Do
 
 #Project Summary
 This is a Single Page Web application implemented using HTML, Semantic UI, JavaScript, Node.js and MongoDB. 
