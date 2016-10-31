@@ -1,6 +1,8 @@
-#Filmder (Should I watch this?  Strangers vote on your TV and movie choices)
+#Filmder 
 
-Project 1 submission by Team- Oscillatory Memorization
+Project 1 : Should I watch this?  Strangers vote on your TV and movie choices
+
+Submission by Team- Oscillatory Memorization
 
 Group Members: Supra Chavan, Edwin Diaz-Mendez, Itsaraphongm Sawangsri, Joseph Woolf, Andrew Do
 
