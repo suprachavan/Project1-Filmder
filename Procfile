@@ -1,3 +1,3 @@
-mongodb: ../mongodb/bin/mongod --dbpath=$HOME/mongodb/data
+mongodb: $HOME/mongodb/bin/mongod --dbpath=$HOME/mongodb/data
 
 web: node p1server.js
